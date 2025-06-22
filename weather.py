@@ -44,5 +44,5 @@ except requests.exceptions.RequestException as err:
 
 
 print("response Headers value are; ",response.headers)
-print(response.reason)
-print(response.elapsed)
+print("response reason is given :",response.reason)
+print("Time Elapsed to get response is",response.elapsed)
