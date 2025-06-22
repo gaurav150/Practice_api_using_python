@@ -1,12 +1,12 @@
 import requests
 import json
-# import os
+
 
 from weather_validation import WeatherSchema
 from marshmallow import ValidationError
 from common_utils.common_methods import https_catch_errors, request_exception_error
 
-# You can swap to os.getenv later for security
+
 API_KEY = "2ca78f5fdf7b04d1536d8701c17e27f2"
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
 
