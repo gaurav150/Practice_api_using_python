@@ -1,7 +1,5 @@
 import requests
 import json
-
-
 from weather_validation import WeatherSchema
 from marshmallow import ValidationError
 from common_utils.common_methods import https_catch_errors, request_exception_error
@@ -29,7 +27,7 @@ def fetch_weather_data(city):
     return None
 
 
-def validate_weather_data(data):
+def validate_weather_data(data) :
     try:
         schema = WeatherSchema()
         return schema.load(data)
@@ -43,11 +41,12 @@ def display_weather_info(validated_data, city):
     temperature = validated_data["main"]["temp"]
     humidity = validated_data["main"]["humidity"]
     wind_speed = validated_data["wind"]["speed"]
-
+    visibility_of_the_day = validated_data['visibility'] / 1000
     print(f"Weather in {city}: {weather}")
     print(f"Temperature: {temperature}°C")
     print(f"Humidity: {humidity}%")
     print(f"Wind Speed: {wind_speed} m/s")
+    print(f"visibility of the day {visibility_of_the_day} km")
 
 
 def write_to_file(data, filename="weather_test.json"):
@@ -56,7 +55,7 @@ def write_to_file(data, filename="weather_test.json"):
     print(f"Data written to {filename} successfully")
 
 
-def main():
+def main() -> None:
     city = "Bangalore"
     response = fetch_weather_data(city)
 

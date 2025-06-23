@@ -5,6 +5,7 @@ class WeatherItemSchema(Schema):
     class Meta:
         unknown = EXCLUDE
 
+
 class MainSchema(Schema):
     temp = fields.Float(required=True)
     humidity = fields.Integer(required=True)
@@ -23,6 +24,8 @@ class WeatherSchema(Schema):
     main = fields.Nested(MainSchema, required=True)
     wind = fields.Nested(WindSchema, required=True)
     name = fields.String(required=True)
+    visibility = fields.Integer(required=True)
 
     class Meta:
         unknown = EXCLUDE  # Ignores extra fields like "feels_like", "gust", etc.
+

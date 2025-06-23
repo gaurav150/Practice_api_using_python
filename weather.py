@@ -23,10 +23,12 @@ try:
         temperature = data["main"]["temp"]
         humidity = data["main"]["humidity"]
         wind_speed = data["wind"]["speed"]
+        visibility_of_the_day = data['visibility'] /1000
         print(f"Weather in {city}: {weather}")
         print(f"Temperature: {temperature}°C")
         print(f"Humidity: {humidity}%")
         print(f"Wind Speed: {wind_speed} m/s")
+        print(f"visibility of the day{visibility_of_the_day} km")
         with open("weather_test.json","w",encoding="utf-8") as f:
             json.dump(data,f,indent=4)
             print("Data Written to api_test.json file ,successfully")
