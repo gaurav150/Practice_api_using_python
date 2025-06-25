@@ -13,13 +13,13 @@
     ],
     "base": "stations",
     "main": {
-        "temp": 25.8,
-        "feels_like": 26.13,
-        "temp_min": 25.8,
-        "temp_max": 25.8,
-        "pressure": 1011,
+        "temp": 25.89,
+        "feels_like": 26.23,
+        "temp_min": 25.89,
+        "temp_max": 25.89,
+        "pressure": 1012,
         "humidity": 65,
-        "sea_level": 1011,
+        "sea_level": 1012,
         "grnd_level": 914
     },
     "visibility": 10000,
@@ -31,7 +31,7 @@
     "clouds": {
         "all": 100
     },
-    "dt": 1750653886,
+    "dt": 1750655085,
     "sys": {
         "country": "IN",
         "sunrise": 1750638304,

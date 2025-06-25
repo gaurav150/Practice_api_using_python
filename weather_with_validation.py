@@ -49,7 +49,7 @@ def display_weather_info(validated_data, city):
     print(f"visibility of the day {visibility_of_the_day} km")
 
 
-def write_to_file(data, filename="weather_test.json"):
+def write_to_file(data, filename="weather_test.json") -> None:
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4)
     print(f"Data written to {filename} successfully")
