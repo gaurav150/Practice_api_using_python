@@ -2,15 +2,18 @@ import requests
 import json
 
 from common_utils.common_methods import https_catch_errors, request_exception_error
+from dotenv import load_dotenv
+import os
 
-API_KEY = "2ca78f5fdf7b04d1536d8701c17e27f2"
+load_dotenv()   #loads .env from current directory
+api_key = os.getenv("API_KEY")
 # INSTEAD OF DISPLAYING HERE KEY WE CAN USE
-# export owm_api_key=2ca78f5fdf7b04d1536d8701c17e27f2 to set this as environment variable
+# export owm_api_key=value_of_key to set this as environment variable
 city = "Bangalore"
 url = "http://api.openweathermap.org/data/2.5/weather"
 parameter = {
         "q":city,
-        "appid":API_KEY,
+        "appid":api_key,
         "units":"metric"
 }
 response = requests.get(url=url,params=parameter)

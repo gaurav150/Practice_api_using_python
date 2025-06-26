@@ -3,16 +3,18 @@ import json
 from weather_validation import WeatherSchema
 from marshmallow import ValidationError
 from common_utils.common_methods import https_catch_errors, request_exception_error
+from dotenv import load_dotenv
+import os
 
-
-API_KEY = "2ca78f5fdf7b04d1536d8701c17e27f2"
+load_dotenv()   #loads .env from current directory
+api_key = os.getenv("API_KEY")
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
 
 
 def fetch_weather_data(city):
     parameters = {
         "q": city,
-        "appid": API_KEY,
+        "appid": api_key,
         "units": "metric"
     }
 
