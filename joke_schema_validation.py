@@ -16,5 +16,8 @@ why we are using class meta?
 class Meta is a configuration class inside our Schema class.
 It allows us to control how Marshmallow behaves, without writing extra code.
 we can set unknown = RAISE
+in this case If the input data contains any field 
+not defined in the schema, Marshmallow will raise a ValidationError.
+
 
 """
