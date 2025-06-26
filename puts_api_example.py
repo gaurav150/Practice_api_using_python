@@ -21,7 +21,7 @@ except requests.exceptions.HTTPError as http_err:
 except requests.exceptions.RequestException as err:
     request_exception_error(err)
 
-# ========================Patch Method ===========
+# ========================Patch Method ======================
 
 data_patching =  {
     "id":1,
